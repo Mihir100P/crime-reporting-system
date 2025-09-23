@@ -70,7 +70,7 @@ const Dashboard = ({handleSOS}) => {
             ) : reports.length === 0 ? (
               <div className="text-center py-4">
                 <p className="text-muted">You haven't submitted any reports yet.</p>
-                <Button as={Link} to="/report/user" variant="primary" className="mt-3">
+                <Button as={Link} to="/report/user" className="btn btn-style gradient-text mt-3">
                   Submit Your First Report
                 </Button>
               </div>
