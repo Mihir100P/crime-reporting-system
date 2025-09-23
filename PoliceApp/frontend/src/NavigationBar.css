@@ -1,0 +1,86 @@
+.navbar-default {
+  background-color: #ffffff !important;
+}
+
+.navbar-default .nav-link-custom {
+  color: #000000 !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-default .nav-link-custom:hover {
+  color: #ffc107 !important; 
+}
+
+.navbar-default .dropdown-menu {
+  background-color: #ffffff !important;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+}
+
+.navbar-default .dropdown-item {
+  color: #000000 !important;
+  transition: all 0.3s ease;
+}
+
+.navbar-default .dropdown-item:hover {
+  background-color: #ffc107 !important; 
+  color: #000000 !important; 
+}
+
+.navbar-scrolled {
+  background-color: #ffc107 !important;
+}
+
+.navbar-scrolled .nav-link-custom {
+  color: #000000 !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-scrolled .nav-link-custom:hover {
+  color: #ffffff !important; 
+}
+
+.navbar-scrolled .dropdown-menu {
+  background-color: #ffc107 !important;
+  border-radius: 0.5rem;
+  border: 1px solid #e6a800;
+}
+
+.navbar-scrolled .dropdown-item {
+  color: #000000 !important;
+  transition: all 0.3s ease;
+}
+
+.navbar-scrolled .dropdown-item:hover {
+  background-color: #ffffff !important; 
+  color: #000000 !important;
+}
+
+.user-profile-trigger {
+  background-color: #afb9e6; 
+  color: #8b4513;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.user-profile-trigger:hover {
+  background-color: #0724ff;
+  color: #fff !important; 
+  cursor: pointer;
+}
+
+#user-nav-dropdown::after {
+  display: none !important;
+}
+
+.navHover:hover{
+    color: #0724ff !important;
+}
+
+@media (max-width:991px){
+  .navbar-nav{
+    background-color:#5079cb;
+    border-radius: 5px;
+    border: 2px solid #0c62b8;
+  }
+}
