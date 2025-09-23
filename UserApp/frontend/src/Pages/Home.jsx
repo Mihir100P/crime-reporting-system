@@ -50,12 +50,12 @@ const Home = ({handleSOS}) => {
 
              {/* btn card */}
           <div className="mt-4 d-flex flex-column flex-md-row justify-content-center align-items-center">
-            <div class="row">
-              <div class="col-sm-6 mb-3 mb-sm-0">
-                <div class="card h-100 shadow btn-card">
-                  <div class="card-body">
-                    <h5 class="card-title">Report Crime</h5>
-                    <p class="card-text">Report a crime online with detailed information and supporting evidence. Jatayu ensures your report is securely submitted to the authorities for prompt action.</p>
+            <div className="row">
+              <div className="col-sm-6 mb-3 mb-sm-0">
+                <div className="card h-100 shadow btn-card">
+                  <div className="card-body">
+                    <h5 className="card-title">Report Crime</h5>
+                    <p className="card-text">Report a crime online with detailed information and supporting evidence. Jatayu ensures your report is securely submitted to the authorities for prompt action.</p>
                     <Button
                       as={Link}
                       to="/report/user"
@@ -67,11 +67,11 @@ const Home = ({handleSOS}) => {
                   </div>
                 </div>
               </div>
-              <div class="col-sm-6 mb-3 mb-sm-0">
-                <div class="card h-100 shadow btn-card">
-                  <div class="card-body">
-                    <h5 class="card-title">Nearest Alerts</h5>
-                    <p class="card-text">Stay informed about crimes and emergency situations happening around you. Get real-time alerts based on your location to stay safe and aware.</p>
+              <div className="col-sm-6 mb-3 mb-sm-0">
+                <div className="card h-100 shadow btn-card">
+                  <div className="card-body">
+                    <h5 className="card-title">Nearest Alerts</h5>
+                    <p className="card-text">Stay informed about crimes and emergency situations happening around you. Get real-time alerts based on your location to stay safe and aware.</p>
                     <Button
                       as={Link}
                       to="/alert/user"
@@ -83,11 +83,11 @@ const Home = ({handleSOS}) => {
                   </div>
                 </div>
               </div>
-              <div class="col-sm-6 mb-3 mb-sm-0 mt-4">
-                <div class="card h-100 shadow btn-card">
-                  <div class="card-body">
-                    <h5 class="card-title">Locate Service</h5>
-                    <p class="card-text">Find the nearest police stations, hospitals, and emergency services instantly. Jatayu helps you connect with the right support when every second matters.</p>
+              <div className="col-sm-6 mb-3 mb-sm-0 mt-4">
+                <div className="card h-100 shadow btn-card">
+                  <div className="card-body">
+                    <h5 className="card-title">Locate Service</h5>
+                    <p className="card-text">Find the nearest police stations, hospitals, and emergency services instantly. Jatayu helps you connect with the right support when every second matters.</p>
                     <Button
                     as={Link}
                     to="/map/user"
@@ -99,11 +99,11 @@ const Home = ({handleSOS}) => {
                   </div>
                 </div>
               </div>
-              <div class="col-sm-6 mb-3 mb-sm-0 mt-4">
-                <div class="card h-100 shadow btn-card">
-                  <div class="card-body">
-                    <h5 class="card-title">Join as Community Member</h5>
-                    <p class="card-text">Be part of a responsible community working towards safety. Share experiences, raise awareness, and collaborate to make neighborhoods safer for everyone.</p>
+              <div className="col-sm-6 mb-3 mb-sm-0 mt-4">
+                <div className="card h-100 shadow btn-card">
+                  <div className="card-body">
+                    <h5 className="card-title">Join as Community Member</h5>
+                    <p className="card-text">Be part of a responsible community working towards safety. Share experiences, raise awareness, and collaborate to make neighborhoods safer for everyone.</p>
                     <Button
                       as={Link}
                       to="/join/user"

@@ -40,12 +40,12 @@ const Home = () => {
 
              {/* btn card */}
           <div className="mt-4 d-flex flex-column flex-md-row justify-content-center align-items-center">
-            <div class="row">
-              <div class="col-sm-6 mb-3 mb-sm-0">
-                <div class="card h-100 shadow btn-card">
-                  <div class="card-body">
-                    <h5 class="card-title">Check Reports</h5>
-                    <p class="card-text">Access submitted crime reports and monitor incident from citizens with attached evidence and locations for quick response.</p>
+            <div className="row">
+              <div className="col-sm-6 mb-3 mb-sm-0">
+                <div className="card h-100 shadow btn-card">
+                  <div className="card-body">
+                    <h5 className="card-title">Check Reports</h5>
+                    <p className="card-text">Access submitted crime reports and monitor incident from citizens with attached evidence and locations for quick response.</p>
                     <Button
                       as={Link}
                       to="/report/police"
@@ -57,11 +57,11 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div class="col-sm-6 mb-3 mb-sm-0">
-                <div class="card h-100 shadow btn-card">
-                  <div class="card-body">
-                    <h5 class="card-title">Send Alerts</h5>
-                    <p class="card-text">Notify citizens about real-time emergencies, crimes, safety updates and warnings with nearby users based on location.</p>
+              <div className="col-sm-6 mb-3 mb-sm-0">
+                <div className="card h-100 shadow btn-card">
+                  <div className="card-body">
+                    <h5 className="card-title">Send Alerts</h5>
+                    <p className="card-text">Notify citizens about real-time emergencies, crimes, safety updates and warnings with nearby users based on location.</p>
                     <Button
                       as={Link}
                       to="/alert/send"
