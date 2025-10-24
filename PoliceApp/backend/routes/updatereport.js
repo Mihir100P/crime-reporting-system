@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Report = require("../../../SharedModels/report");
+const { Report } = require("../app");
 const { PoliceAuth } = require("../middleware");
 
 router.post("/:id", PoliceAuth, async (req, res) => {

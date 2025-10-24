@@ -47,7 +47,6 @@ module.exports = (io, onlineUsers) => {
   router.post("/", async (req, res) => {
     try {
       const { location, message } = req.body;
-
       if (!location || !message) {
         return res.status(400).json({ success: false, error: "Location and message are required" });
       }

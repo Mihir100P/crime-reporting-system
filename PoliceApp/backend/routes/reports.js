@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Report = require("../../../SharedModels/report");
+const { Report } = require("../app");
 const Police = require("../models/police");
 const { PoliceAuth } = require("../middleware");
 

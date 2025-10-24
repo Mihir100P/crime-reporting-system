@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Report = require("../../../SharedModels/report");
+const { Report } = require("../app");
 const { auth } = require("../middleware");
 const multer = require("multer");
 const {storage} = require("../cloudConfig.js");

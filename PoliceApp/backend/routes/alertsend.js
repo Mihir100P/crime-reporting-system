@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
   }
 
   try {
-    await axios.post("http://localhost:5000/api/alerts", { location, message }, {
+    await axios.post(`${process.env.USERBACKEND_URL}/api/alerts`, { location, message }, {
       headers: { "Content-Type": "application/json" },
     });
 

@@ -9,6 +9,9 @@ const User = require('./models/user');
 const session = require("express-session");
 const mongoStore = require("connect-mongo");
 
+const UserSchema = require("../../SharedModels/user");
+const ReportSchema = require("../../SharedModels/report");
+
 const http = require("http");
 const socketIo = require("socket.io");
 const Server = http.createServer(app);
@@ -51,6 +54,9 @@ app.use(session({
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
+
+const Report = mongoose.models.Report || mongoose.model("Report", ReportSchema);
+module.exports.Report = Report;
 
 const PORT = process.env.PORT || 5000;
 

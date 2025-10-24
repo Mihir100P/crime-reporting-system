@@ -1,4 +1,4 @@
-const { mongoose } = require("../UserApp/backend/db/mongoose");
+const mongoose = require('mongoose');
 
 const ReportSchema = new mongoose.Schema({
   user: {
@@ -54,4 +54,4 @@ const ReportSchema = new mongoose.Schema({
 });
 
 ReportSchema.index({ location: "2dsphere" });
-module.exports = mongoose.models.Report || mongoose.model("Report", ReportSchema);
+module.exports = ReportSchema;
