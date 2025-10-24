@@ -14,6 +14,7 @@
     "@tanstack/react-query": "^5.83.0",
     "axios": "^1.10.0",
     "bootstrap": "^5.3.7",
+    "crime-system": "file:../..",
     "framer-motion": "^12.23.15",
     "lucide-react": "^0.544.0",
     "mapbox-gl": "^3.13.0",

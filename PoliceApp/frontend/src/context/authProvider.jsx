@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   // Fetch logged-in Police from session cookie
   const fetchPolice = async () => {
     try {
-      const res = await axios.get("http://localhost:5001/api/police/me", {
+      const res = await axios.get("/api/police/me", {
         withCredentials: true,
       });
 
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
   const fetchPoliceProfile = async (policeId) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5001/api/police/profile/${policeId}`,
+        `/api/police/profile/${policeId}`,
         { withCredentials: true }
       );
       setAllData(data);
@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }) => {
   const loginPolice = async (StationName, password) => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5001/api/police/login",
+        "/api/police/login",
         { StationName, password },
         { withCredentials: true }
       );
@@ -72,7 +72,7 @@ export const AuthProvider = ({ children }) => {
   const registerPolice = async (policeData) => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5001/api/police/register",
+        "/api/police/register",
         policeData,
         { withCredentials: true }
       );
@@ -89,7 +89,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async (navigate) => {
     try {
-      await fetch("http://localhost:5001/api/police/logout", {
+      await fetch("/api/police/logout", {
         method: "get",
         credentials: "include",
       });

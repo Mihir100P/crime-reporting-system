@@ -20,7 +20,7 @@ async function updateStatus(e) {
   const newStatus = e.target.status.value;
   try {
     const res = await axios.post(
-      `http://localhost:5001/api/report-status/${id}`,
+      `/api/report-status/${id}`,
       { status: newStatus },
       { withCredentials: true }
     );
@@ -38,7 +38,7 @@ async function updateStatus(e) {
   useEffect(() => {
     const fetchReport = async () => {
       try {
-        const res = await axios.get(`http://localhost:5001/api/reports/${id}`, {
+        const res = await axios.get(`/api/reports/${id}`, {
           withCredentials: true,
         });
         if (res.data.success) {
@@ -55,7 +55,7 @@ async function updateStatus(e) {
      if (!report?.user) return;
     const fetchUser = async () => {
       try {
-        const res = await axios.get(`http://localhost:5001/api/fetch-user/${report.user}`,{
+        const res = await axios.get(`/api/fetch-user/${report.user}`,{
           withCredentials: true,
         });
       if(res.data.success){

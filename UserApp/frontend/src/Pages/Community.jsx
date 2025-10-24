@@ -49,7 +49,7 @@ function Community({handleSOS}) {
     const coord = await getCoordFromAddress(input.location);
     try {
       const result = await axios.post(
-        "http://localhost:5000/api/join",
+        "/api/join",
         {...input,coord},
         { withCredentials: true }
       );

@@ -15,7 +15,7 @@ const View = ({handleSOS}) => {
   useEffect(() => {
     const fetchReport = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/reports/${id}`, {
+        const res = await axios.get(`/api/reports/${id}`, {
           withCredentials: true,
         });
         if (res.data.success) {

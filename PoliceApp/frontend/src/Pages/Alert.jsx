@@ -12,7 +12,7 @@ export default function AlertSend() {
     setLoading(true);
 
     try {
-      await axios.post("http://localhost:5001/api/trigger-alert", {
+      await axios.post("/api/trigger-alert", {
         location,
         message
       });

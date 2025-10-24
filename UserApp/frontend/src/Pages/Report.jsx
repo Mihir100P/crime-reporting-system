@@ -29,7 +29,7 @@ const ReportForm = ({handleSOS}) => {
 
   const createReportMutation = useMutation({
     mutationFn: async (formData) => {
-      const response = await fetch("http://localhost:5000/api/reports", {
+      const response = await fetch("/api/reports", {
         method: "POST",
         body: formData,
         credentials: "include"

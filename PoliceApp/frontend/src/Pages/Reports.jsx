@@ -20,7 +20,7 @@ const Dashboard = () => {
   withCredentials: true,
 };
 
-        const { data } = await axios.get("http://localhost:5001/api/reports", config);
+        const { data } = await axios.get("/api/reports", config);
         setReports(data);
         setIsLoading(false);
       } catch (error) {

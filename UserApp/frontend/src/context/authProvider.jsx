@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUser = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/users/me", {
+      const res = await axios.get("/api/users/me", {
         withCredentials: true,
       });
 
@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
   const fetchUserProfile = async (userId) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/users/profile/${userId}`,
+        `/api/users/profile/${userId}`,
         { withCredentials: true }
       );
       setAllData(data);
@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }) => {
   const loginUser = async (email, password) => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/users/login",
+        "/api/users/login",
         { email, password },
         { withCredentials: true }
       );
@@ -71,7 +71,7 @@ export const AuthProvider = ({ children }) => {
   const registerUser = async (userData) => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/users/register",
+        "/api/users/register",
         userData,
         { withCredentials: true }
       );
@@ -88,7 +88,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async (navigate) => {
     try {
-      await fetch("http://localhost:5000/api/users/logout", {
+      await fetch("/api/users/logout", {
         method: "get",
         credentials: "include",
       });
@@ -104,7 +104,7 @@ export const AuthProvider = ({ children }) => {
   const updateUserPoints = async (userId, points) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:5000/api/users/update-points/${userId}`,
+        `/api/users/update-points/${userId}`,
         { points },
         { withCredentials: true }
       );

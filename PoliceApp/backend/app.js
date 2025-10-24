@@ -7,13 +7,14 @@ const localStrategy = require("passport-local");
 const dotenv = require('dotenv');
 const Police = require('./models/police');
 const session = require("express-session");
+const mongoStore = require("connect-mongo");
 
 const http = require("http");
 const socketIo = require("socket.io");
 const AlertServer = http.createServer(app);
 const io = socketIo(AlertServer, {
   cors: {
-    origin: "http://localhost:5174",
+    origin: process.env.FRONTEND_URL,
     methods: ["GET", "POST"]
   }
 });
@@ -25,22 +26,31 @@ io.on("connection", (socket) => {
   // });
 });
 
-app.use(cors({ origin: "http://localhost:5174", credentials: true }));
+app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 dotenv.config();
 
-app.use(session({
+const store = mongoStore.create({
+    mongoUrl:process.env.MONGO_URI,
+    crypto:{
+        secret:process.env.SECRET_KEY
+    },
+    touchAfter:24*3600,
+});
+
+app.use(session({ 
+    store,
     secret:process.env.SECRET_KEY,
     resave:false,
-    saveUninitialized:true,
+    saveUninitialized:false,
     cookie : {
         expires:Date.now() + 7*24*60*60*1000,
         maxAge:7*24*60*60*1000,
-        secure: false,        
+        secure: process.env.NODE_ENV === "production",        
         httpOnly: true,
-        sameSite: "lax" 
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax"
     }}));
 
 mongoose.connect(process.env.MONGO_URI)
