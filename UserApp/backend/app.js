@@ -9,8 +9,8 @@ const User = require('./models/user');
 const session = require("express-session");
 const mongoStore = require("connect-mongo");
 
-const UserSchema = require("../../SharedModels/user");
-const ReportSchema = require("../../SharedModels/report");
+const ReportSchema = require("shared-models/report");
+
 
 const http = require("http");
 const socketIo = require("socket.io");

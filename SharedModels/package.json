@@ -1,4 +1,15 @@
 {
+  "name": "shared-models",
+  "version": "1.0.0",
+  "description": "Shared Mongoose schemas for UserApp and PoliceApp",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": ["mongoose", "models", "shared"],
+  "author": "Mihir",
+  "license": "ISC",
   "dependencies": {
     "mongoose": "^8.19.2",
     "passport-local-mongoose": "^8.0.0"
