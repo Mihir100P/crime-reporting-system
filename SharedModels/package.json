@@ -7,7 +7,11 @@
   "scripts": {
     "test": "echo \"No tests yet\""
   },
-  "keywords": ["mongoose", "models", "shared"],
+  "keywords": [
+    "mongoose",
+    "models",
+    "shared"
+  ],
   "author": "Mihir",
   "license": "ISC",
   "dependencies": {
