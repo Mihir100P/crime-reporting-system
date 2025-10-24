@@ -20,6 +20,14 @@ const NavigationBar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+   function closeNavbar() {
+    const navbar = document.getElementById("basic-navbar-nav");
+    if (navbar?.classList.contains("show")) {
+      const bsCollapse = new window.bootstrap.Collapse(navbar, { toggle: true });
+      bsCollapse.hide();
+    }
+  }
+  
   return (
     <Navbar
       expand="lg"
@@ -37,8 +45,7 @@ const NavigationBar = () => {
         <Navbar.Brand
           as={Link}
           to="/"
-          className="fw-bold d-flex align-items-center me-auto"
-          style={{ marginLeft: "6.5rem"}}
+          className="fw-bold d-flex align-items-center me-auto ms-5"
         >
           <img
             width={scrolled ? "40" : "50"}
@@ -71,21 +78,21 @@ const NavigationBar = () => {
             }}>
           <Nav className="ms-auto text-uppercase fs-5 d-flex align-items-center me-5">
             <div className="d-flex flex-column flex-lg-row me-4">
-              <Nav.Link as={Link} to="/" className="fw-semibold px-4 navHover">
+              <Nav.Link as={Link} to="/" className="fw-semibold px-4 navHover" onClick={closeNavbar}>
                 Home
               </Nav.Link>
 
             {police ? (
               <>
-                <Nav.Link as={Link} to="/report/police" className="fw-semibold px-4 navHover">Reports</Nav.Link>
+                <Nav.Link as={Link} to="/report/police" className="fw-semibold px-4 navHover" onClick={closeNavbar}>Reports</Nav.Link>
 
-                <Nav.Link as={Link} to="/alert/send" className="fw-semibold px-4 navHover">Alert</Nav.Link>
+                <Nav.Link as={Link} to="/alert/send" className="fw-semibold px-4 navHover" onClick={closeNavbar}>Alert</Nav.Link>
               </>
             ) : (
               <>
-                <Nav.Link as={Link} to="/login" className="fw-semibold px-4 navHover">Login</Nav.Link>
+                <Nav.Link as={Link} to="/login" className="fw-semibold px-4 navHover" onClick={closeNavbar}>Login</Nav.Link>
 
-                <Nav.Link as={Link} to="/register" className="fw-semibold px-4 navHover">Register</Nav.Link>
+                <Nav.Link as={Link} to="/register" className="fw-semibold px-4 navHover" onClick={closeNavbar}>Register</Nav.Link>
               </>
             )}
             </div>
@@ -101,7 +108,7 @@ const NavigationBar = () => {
                   </div>
                 }
               >
-                <NavDropdown.Item as={Link} to="/profile/police" className="navHover">
+                <NavDropdown.Item as={Link} to="/profile/police" className="navHover" onClick={closeNavbar}>
                   Profile
                 </NavDropdown.Item>
                 <NavDropdown.Item onClick={handleLogout} className="navHover">
