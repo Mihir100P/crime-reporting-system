@@ -37,17 +37,17 @@ router.post('/register', async (req, res) => {
 });
 
 router.post('/login', (req, res, next) => {
-   const { email, password } = req.body;
+  const { email, password } = req.body;
   if (!email || !password) {
     return res.status(400).json({ success: false, message: 'All fields are required' });
   }
   passport.authenticate('local', (err, user, info) => {
     if (err) return res.status(500).json({ success: false, message: 'Server error' });
     if (!user) return res.status(400).json({ success: false, message: info?.message || 'Invalid credentials' });
-
+    
     req.login(user, (err) => {
       if (err) return res.status(500).json({ success: false, message: 'Login failed' });
-
+      
       return res.status(200).json({
         success: true,
         user: {
