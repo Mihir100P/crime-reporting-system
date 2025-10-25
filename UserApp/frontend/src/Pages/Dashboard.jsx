@@ -16,11 +16,8 @@ const Dashboard = ({handleSOS}) => {
     const fetchReports = async () => {
       try {
         const config = {
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem("token")}`,
-  },
-  withCredentials: true,
-};
+        withCredentials: true
+          };
 
         const { data } = await axios.get(`${api_url}/api/reports`, config);
         setReports(data);

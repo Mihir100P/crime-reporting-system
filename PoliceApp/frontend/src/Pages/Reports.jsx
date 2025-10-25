@@ -15,11 +15,8 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchReports = async () => {
       try {
-        const config = {
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem("token")}`,
-  },
-  withCredentials: true,
+        const config = {  
+          withCredentials: true
 };
 
         const { data } = await axios.get(`${api_url}/api/reports`, config);
