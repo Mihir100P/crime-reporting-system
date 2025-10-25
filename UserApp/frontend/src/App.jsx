@@ -14,7 +14,7 @@ import AlertList from "./Pages/Alert";
 import Community from "./Pages/Community"
 import NotFound from "./Pages/NotFound";
 import View from "./Pages/View";
-import "./app.css";
+import "./App.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";

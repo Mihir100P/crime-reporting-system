@@ -10,7 +10,7 @@ import Profile from "./Pages/PoliceProfile";
 import View from "./Pages/View";
 import AlertSend from "./Pages/Alert";
 import NotFound from "./Pages/NotFound";
-import "./app.css";
+import "./App.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
