@@ -29,14 +29,13 @@ app.use(express.urlencoded({ extended: true }));
 dotenv.config();
 
 const store = mongoStore.create({
-  mongoUrl:process.env.MONGO_URI,
-  crypto:{
-    secret:process.env.SECRET_KEY
-  },
-  touchAfter:24*3600,
+    mongoUrl:process.env.MONGO_URI,
+    crypto:{
+        secret:process.env.SECRET_KEY
+    },
+    touchAfter:24*3600,
 });
-
-app.set('trust proxy', 1);
+    
 app.use(session({ 
     store,
     secret: process.env.SECRET_KEY,
