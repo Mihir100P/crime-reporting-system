@@ -10,6 +10,8 @@ const Dashboard = ({handleSOS}) => {
   const [error, setError] = useState(null);
   const { user } = useContext(AuthContext);
 
+  const api_url = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     const fetchReports = async () => {
       try {
@@ -20,7 +22,7 @@ const Dashboard = ({handleSOS}) => {
   withCredentials: true,
 };
 
-        const { data } = await axios.get("/api/reports", config);
+        const { data } = await axios.get(`${api_url}/api/reports`, config);
         setReports(data);
         setIsLoading(false);
       } catch (error) {

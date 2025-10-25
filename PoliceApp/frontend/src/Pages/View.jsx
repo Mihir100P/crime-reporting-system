@@ -7,6 +7,7 @@ import {Button} from "react-bootstrap";
 import { toast } from "react-toastify";
 
 mapboxgl.accessToken = import.meta.env.VITE_MAP_TOKEN;
+const api_url = import.meta.env.VITE_API_URL; 
 
 const View = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ async function updateStatus(e) {
   const newStatus = e.target.status.value;
   try {
     const res = await axios.post(
-      `/api/report-status/${id}`,
+      `${api_url}/api/report-status/${id}`,
       { status: newStatus },
       { withCredentials: true }
     );
@@ -38,7 +39,7 @@ async function updateStatus(e) {
   useEffect(() => {
     const fetchReport = async () => {
       try {
-        const res = await axios.get(`/api/reports/${id}`, {
+        const res = await axios.get(`${api_url}/api/reports/${id}`, {
           withCredentials: true,
         });
         if (res.data.success) {
@@ -55,7 +56,7 @@ async function updateStatus(e) {
      if (!report?.user) return;
     const fetchUser = async () => {
       try {
-        const res = await axios.get(`/api/fetch-user/${report.user}`,{
+        const res = await axios.get(`${api_url}/api/fetch-user/${report.user}`,{
           withCredentials: true,
         });
       if(res.data.success){

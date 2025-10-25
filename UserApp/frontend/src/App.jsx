@@ -21,13 +21,15 @@ import { toast } from "react-toastify";
 import io from "socket.io-client";
 
 const SOCKET_URL = import.meta.env.VITE_SOCKET_URL;
+const api_url = import.meta.env.VITE_API_URL;
+
 const socket = io(SOCKET_URL, { withCredentials: true });
 
 const handleSOS = () => {
   navigator.geolocation.getCurrentPosition(position => {
     const { longitude, latitude } = position.coords;
 
-    fetch("/api/sos/alert", {
+    fetch(`${api_url}/api/sos/alert`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ lng: longitude , lat: latitude})

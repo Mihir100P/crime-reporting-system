@@ -5,6 +5,7 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 mapboxgl.accessToken = import.meta.env.VITE_MAP_TOKEN;
+const api_url = import.meta.env.VITE_API_URL;
 
 const View = ({handleSOS}) => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const View = ({handleSOS}) => {
   useEffect(() => {
     const fetchReport = async () => {
       try {
-        const res = await axios.get(`/api/reports/${id}`, {
+        const res = await axios.get(`${api_url}/api/reports/${id}`, {
           withCredentials: true,
         });
         if (res.data.success) {

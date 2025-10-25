@@ -7,6 +7,7 @@ import AuthContext from "../context/authContext";
 import { toast } from "react-toastify";
 
 const accessToken = import.meta.env.VITE_MAP_TOKEN;
+const api_url = import.meta.env.VITE_API_URL;
 
 const ReportForm = ({handleSOS}) => {
   const [files, setFiles] = useState([]);
@@ -29,7 +30,7 @@ const ReportForm = ({handleSOS}) => {
 
   const createReportMutation = useMutation({
     mutationFn: async (formData) => {
-      const response = await fetch("/api/reports", {
+      const response = await fetch(`${api_url}/api/reports`, {
         method: "POST",
         body: formData,
         credentials: "include"

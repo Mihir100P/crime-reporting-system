@@ -8,10 +8,12 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [allData, setAllData] = useState(null);
 
+  const api_url = import.meta.env.VITE_API_URL; 
+
   // Fetch logged-in Police from session cookie
   const fetchPolice = async () => {
     try {
-      const res = await axios.get("/api/police/me", {
+      const res = await axios.get(`${api_url}/api/police/me`, {
         withCredentials: true,
       });
 
@@ -37,7 +39,7 @@ export const AuthProvider = ({ children }) => {
   const fetchPoliceProfile = async (policeId) => {
     try {
       const { data } = await axios.get(
-        `/api/police/profile/${policeId}`,
+        `${api_url}/api/police/profile/${policeId}`,
         { withCredentials: true }
       );
       setAllData(data);
@@ -49,7 +51,7 @@ export const AuthProvider = ({ children }) => {
   const loginPolice = async (StationName, password) => {
     try {
       const { data } = await axios.post(
-        "/api/police/login",
+        `${api_url}/api/police/login`,
         { StationName, password },
         { withCredentials: true }
       );
@@ -72,7 +74,7 @@ export const AuthProvider = ({ children }) => {
   const registerPolice = async (policeData) => {
     try {
       const { data } = await axios.post(
-        "/api/police/register",
+        `${api_url}/api/police/register`,
         policeData,
         { withCredentials: true }
       );
@@ -89,7 +91,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async (navigate) => {
     try {
-      await fetch("/api/police/logout", {
+      await fetch(`${api_url}/api/police/logout`, {
         method: "get",
         credentials: "include",
       });

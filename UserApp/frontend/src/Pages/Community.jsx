@@ -10,6 +10,8 @@ function Community({handleSOS}) {
     location: ""
   });
 
+  const api_url = import.meta.env.VITE_API_URL;
+
   const getCoordFromAddress = async (address) => {
     try {
       const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(address)}.json`;
@@ -49,7 +51,7 @@ function Community({handleSOS}) {
     const coord = await getCoordFromAddress(input.location);
     try {
       const result = await axios.post(
-        "/api/join",
+        `${api_url}/api/join`,
         {...input,coord},
         { withCredentials: true }
       );

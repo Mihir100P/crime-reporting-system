@@ -6,8 +6,7 @@ import "./NavigationBar.css";
 
 const NavigationBar = () => {
   const navigate = useNavigate();
-  const { logout } = useContext(AuthContext);
-  const { police } = useContext(AuthContext);
+  const { logout, police } = useContext(AuthContext);
    const [scrolled, setScrolled] = useState(false);
 
   const handleLogout = async () => {

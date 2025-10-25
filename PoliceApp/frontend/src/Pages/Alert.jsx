@@ -7,12 +7,14 @@ export default function AlertSend() {
   const [location, setLocation] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const api_url = import.meta.env.VITE_API_URL; 
+
   const sendAlert = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      await axios.post("/api/trigger-alert", {
+      await axios.post(`${api_url}/api/trigger-alert`, {
         location,
         message
       });

@@ -8,9 +8,11 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [allData, setAllData] = useState(null);
 
+  const api_url = import.meta.env.VITE_API_URL;
+
   const fetchUser = async () => {
     try {
-      const res = await axios.get("/api/users/me", {
+      const res = await axios.get(`${api_url}/api/users/me`, {
         withCredentials: true,
       });
 
@@ -36,7 +38,7 @@ export const AuthProvider = ({ children }) => {
   const fetchUserProfile = async (userId) => {
     try {
       const { data } = await axios.get(
-        `/api/users/profile/${userId}`,
+        `${api_url}/api/users/profile/${userId}`,
         { withCredentials: true }
       );
       setAllData(data);
@@ -48,7 +50,7 @@ export const AuthProvider = ({ children }) => {
   const loginUser = async (email, password) => {
     try {
       const { data } = await axios.post(
-        "/api/users/login",
+        `${api_url}/api/users/login`,
         { email, password },
         { withCredentials: true }
       );
@@ -71,7 +73,7 @@ export const AuthProvider = ({ children }) => {
   const registerUser = async (userData) => {
     try {
       const { data } = await axios.post(
-        "/api/users/register",
+        `${api_url}/api/users/register`,
         userData,
         { withCredentials: true }
       );
@@ -88,7 +90,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async (navigate) => {
     try {
-      await fetch("/api/users/logout", {
+      await fetch(`${api_url}/api/users/logout`, {
         method: "get",
         credentials: "include",
       });
@@ -104,7 +106,7 @@ export const AuthProvider = ({ children }) => {
   const updateUserPoints = async (userId, points) => {
     try {
       const { data } = await axios.put(
-        `/api/users/update-points/${userId}`,
+        `${api_url}/api/users/update-points/${userId}`,
         { points },
         { withCredentials: true }
       );
