@@ -4,6 +4,7 @@
   "description": "Backend for police app",
   "main": "app.js",
   "scripts": {
+    "postinstall": "cd ../../SharedModels && npm install && cd -",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
