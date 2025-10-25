@@ -14,7 +14,7 @@ export default function AlertSend() {
     setLoading(true);
 
     try {
-      await axios.post(`${api_url}/api/trigger-alert`, {
+      await axios.post(`${api_url}/api/trigger-alert`,{ withCredentials: true }, {
         location,
         message
       });

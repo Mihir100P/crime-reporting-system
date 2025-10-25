@@ -34,7 +34,7 @@ const ReportForm = ({handleSOS}) => {
         method: "POST",
         body: formData,
         credentials: "include"
-      });
+      },{ withCredentials: true });
 
       if (!response.ok) {
         const errorData = await response.json();
