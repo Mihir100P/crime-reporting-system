@@ -14,11 +14,7 @@ export default function AlertSend() {
     setLoading(true);
 
     try {
-      await axios.post(`${api_url}/api/trigger-alert`,{ withCredentials: true }, {
-        location,
-        message
-      });
-
+      await axios.post(`${api_url}/api/trigger-alert`,{ location, message },{ withCredentials: true });
       toast.success("Alert sent successfully!");
       setMessage("");
       setLocation("");

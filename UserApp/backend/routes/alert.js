@@ -66,7 +66,7 @@ module.exports = (io, onlineUsers) => {
         if (!userData.location) continue;
         const dist = haversineDistance(coords, userData.location);
         console.log(dist);
-        if (dist <= 5) {
+        if (dist <= 50) {
           io.to(socketId).emit("new-alert", alert);
         }
       }
@@ -80,7 +80,7 @@ module.exports = (io, onlineUsers) => {
 
   router.get("/", async (req, res) => {
     try {
-      const { lat, lng, radius = 5 } = req.query;
+      const { lat, lng, radius = 50 } = req.query;
       const alerts = await Alert.find().sort({ timestamp: -1 });
 
       if (!lat || !lng) {

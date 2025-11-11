@@ -51,6 +51,7 @@ function haversineDistance(loc1, loc2) {
 }
 
 router.post('/alert', async (req, res) => {
+  console.log("alert");
   const { lat, lng } = req.body;
   try {
     const members = await Community.find();

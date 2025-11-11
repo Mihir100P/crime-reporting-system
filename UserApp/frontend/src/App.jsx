@@ -29,8 +29,9 @@ const handleSOS = () => {
   navigator.geolocation.getCurrentPosition(position => {
     const { longitude, latitude } = position.coords;
 
-    fetch(`${api_url}/api/sos/alert`, { withCredentials: true },{
+    fetch(`${api_url}/api/sos/alert`,{
       method: "POST",
+      credentials: "include",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ lng: longitude , lat: latitude})
     })

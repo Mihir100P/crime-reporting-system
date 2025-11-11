@@ -20,7 +20,7 @@ router.get("/", PoliceAuth, async (req, res) => {
             type: "Point",
             coordinates: policeCoords,
           },
-          $maxDistance: 50 * 1000, // 5 km (converted to meters)
+          $maxDistance: 50 * 1000,
         },
       },
     }).sort({ createdAt: -1 });
